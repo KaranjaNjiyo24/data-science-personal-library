@@ -24,6 +24,30 @@ const AddBook = ({ onAddBook }) => {
         id: Date.now(),
         coverImage: imagePreview || formData.coverImage
       };
+      fetch('http://localhost:3000/books', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newBook),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          onAddBook(data);
+          setFormData({
+            title: '',
+            author: '',
+            publicationYear: '',
+            genre: 'Programming',
+            ISBN: '',
+            status: 'Unread',
+            coverImage: '',
+            reviews: []
+          });
+          setImagePreview(null);
+          navigate("/"); // Navigate to home after adding book
+        });
+    };
 }
 
 export default AddBook;
