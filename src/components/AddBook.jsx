@@ -13,6 +13,17 @@ const AddBook = ({ onAddBook }) => {
       coverImage: '',
       reviews: []
     });
+    const [imagePreview, setImagePreview] = useState(null);
+    const navigate = useNavigate();
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      const newBook = {
+        ...formData,
+        id: Date.now(),
+        coverImage: imagePreview || formData.coverImage
+      };
 }
 
 export default AddBook;
