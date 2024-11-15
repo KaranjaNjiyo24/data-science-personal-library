@@ -13,7 +13,7 @@ const App = () => {
   const [filteredBooks, setFilteredBooks] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/books')
+    fetch('https://data-science-books.onrender.com/books')
       .then((res) => res.json())
       .then((data) => {
         setBooks(data)
@@ -22,7 +22,7 @@ const App = () => {
   }, []);
 
   const handleAddBook = (newBook) => {
-    fetch('http://localhost:3000/books', {
+    fetch('https://data-science-books.onrender.com/books', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const App = () => {
       book.id === bookId ? { ...book, status: newStatus } : book
     );
 
-    fetch(`http://localhost:3000/books/${bookId}`, {
+    fetch(`https://data-science-books.onrender.com/books/${bookId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -53,23 +53,25 @@ const App = () => {
   };
 
   const handleAddReview = (bookId, newReview) => {
-    const book = books.find((b) => b.id === bookId);
-    const updatedReviews = [...book.reviews, newReview];
-    const updatedBooks = books.map((b) =>
-      b.id === bookId ? { ...b, reviews: updatedReviews } : b
-    );
+    const updatedBooks = books.map((book) => {
+      if (book.id === bookId) {
+        return { ...book, reviews: [...book.reviews, newReview] };
+      }
+      return book;
+    });
 
-    fetch(`http://localhost:3000/books/${bookId}`, {
+    fetch(`https://data-science-books.onrender.com/books/${bookId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ reviews: updatedReviews }),
+      body: JSON.stringify({ reviews: updatedBooks.find((b) => b.id === bookId).reviews }),
     })
       .then((res) => res.json())
-      .then(() => {setBooks(updatedBooks);
-      setFilteredBooks(updatedBooks)
-    })
+      .then(() => {
+        setBooks(updatedBooks);
+        setFilteredBooks(updatedBooks);
+      });
   };
 
   
@@ -81,7 +83,7 @@ const App = () => {
       b.id === bookId ? { ...b, reviews: updatedReviews } : b
     );
 
-    fetch(`http://localhost:3000/books/${bookId}`, {
+    fetch(`https://data-science-books.onrender.com/books/${bookId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +104,7 @@ const App = () => {
       b.id === bookId ? { ...b, reviews: updatedReviews } : b
     );
 
-    fetch(`http://localhost:3000/books/${bookId}`, {
+    fetch(`https://data-science-books.onrender.com/books/${bookId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
