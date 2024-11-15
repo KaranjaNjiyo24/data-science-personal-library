@@ -48,7 +48,7 @@ const AddBook = ({ onAddBook }) => {
           navigate("/"); 
         });
     };
-    
+
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -59,6 +59,80 @@ const AddBook = ({ onAddBook }) => {
           reader.readAsDataURL(file);
         }
       };
+      return (
+        <div className="add-book">
+          <h1 className="form-title">Add New Book</h1>
+          <form onSubmit={handleSubmit} className="book-form">
+            <div className="form-group">
+              <label>Title</label>
+              <input
+                type="text"
+                name="title"
+                value={formData.title}
+                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Author</label>
+              <input
+                type="text"
+                name="author"
+                value={formData.author}
+                onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Publication Year</label>
+              <input
+                type="number"
+                name="publicationYear"
+                value={formData.publicationYear}
+                onChange={(e) => setFormData({ ...formData, publicationYear: e.target.value })}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>ISBN</label>
+              <input
+                type="text"
+                name="ISBN"
+                value={formData.ISBN}
+                onChange={(e) => setFormData({ ...formData, ISBN: e.target.value })}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Cover Image URL</label>
+              <input
+                type="url"
+                name="coverImage"
+                value={formData.coverImage}
+                onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
+              />
+            </div>
+            <div className="form-group">
+              <label>Upload Cover Image</label>
+              <input type="file" accept="image/*" onChange={handleImageChange} />
+              {imagePreview && <img src={imagePreview} alt="Preview" className="image-preview" />}
+            </div>
+            <div className="form-group">
+              <label>Status</label>
+              <select
+                name="status"
+                value={formData.status}
+                onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              >
+                <option value="Unread">Unread</option>
+                <option value="Reading">Reading</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <button type="submit" className="submit-button">Add Book</button>
+          </form>
+        </div>
+      );
 }
 
 export default AddBook;
