@@ -25,3 +25,23 @@
 .nav-link:hover {
   color: #ffdd00; /* Light gold */
 }
+
+.status-badge {
+  background-color: #FFD700; /* Gold background */
+  color: #000; /* Black text */
+}
+
+.review,
+.review-text,
+.review-form label {
+  color: #000; /* Black text */
+}
+
+.submit-button {
+  background-color: #FFD700; /* Gold */
+  color: #000; /* Black */
+}
+
+.submit-button:hover {
+  background-color: #ffcc00;
+}
