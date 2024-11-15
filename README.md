@@ -46,8 +46,8 @@ Check out the live version of the app on **Vercel**:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/KaranjaNjiyo24/data-science-library.git
-   cd data-science-library
+   git clone https://github.com/KaranjaNjiyo24/data-science-personal-library.git
+   cd data-science-personal-library
    ```
 
 2. Install dependencies:
