@@ -5,6 +5,7 @@ import BookList from './components/BookList';
 import BookDetail from './components/BookDetail';
 import AddBook from './components/AddBook';
 import About from './components/About';
+import './App.css'
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -101,15 +102,25 @@ const App = () => {
       .then(() => setBooks(updatedBooks));
   };
 
-
-
-
   return (
     <Router>
       <div className="app">
         <NavBar />
         <main className="main-content">
           <Routes>
+            <Route path="/" element={<BookList books={books} />} />
+            <Route
+              path="/book/:id"
+              element={
+                <BookDetail
+                  books={books}
+                  onUpdateStatus={handleUpdateStatus}
+                  onAddReview={handleAddReview}
+                  onEditReview={handleEditReview}
+                  onDeleteReview={handleDeleteReview}
+                />
+              }
+            />
             <Route path="/add" element={<AddBook onAddBook={handleAddBook} />} />
             <Route path="/about" element={<About />} />
           </Routes>

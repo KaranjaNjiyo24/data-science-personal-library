@@ -1,0 +1,115 @@
+
+.book-detail {
+    padding: 1.5rem;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  
+  .book-header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .book-cover {
+    width: 200px;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-info {
+    flex-grow: 1;
+    color: #FFD700;
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .detail-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .status-selector {
+    margin-bottom: 1rem;
+  }
+  
+  .status-selector select {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  .reviews-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .review-form,
+  .edit-review-form {
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    color: #4a5568;
+  }
+  
+  .submit-button {
+    background-color: #FFD700;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #ffcc00;
+  }
+  
+  .cancel-button,
+  .edit-button,
+  .delete-button {
+    background: none;
+    border: none;
+    color: #FFD700;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .rating {
+    margin-bottom: 0.5rem;
+  }
+  
+  .stars-filled {
+    color: #FFD700;
+  }
+  
+  .stars-empty {
+    color: #e2e8f0;
+  }
+  
+  .review-text {
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  .reviewer {
+    color: #718096;
+    font-size: 0.875rem;
+  }
+  

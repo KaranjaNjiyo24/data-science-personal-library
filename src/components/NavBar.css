@@ -1,0 +1,79 @@
+/* NavBar.css */
+.navbar {
+    background-color: #000; /* Black background */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    color: #FFD700; /* Gold */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #ffdd00;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: #FFD700; /* Gold */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #ffdd00;
+  }
+  
+  /* Adding an underline effect on hover */
+  .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+    background-color: #ffcc00;
+  }
+  
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      padding-top: 0.5rem;
+      border-top: 1px solid #333;
+    }
+  
+    .nav-link {
+      padding: 0.5rem 0;
+    }
+  }
+  
