@@ -83,6 +83,24 @@ const App = () => {
       .then(() => setBooks(updatedBooks));
   };
 
+  const handleDeleteReview = (bookId, reviewIndex) => {
+    const book = books.find((b) => b.id === bookId);
+    const updatedReviews = book.reviews.filter((_, index) => index !== reviewIndex);
+    const updatedBooks = books.map((b) =>
+      b.id === bookId ? { ...b, reviews: updatedReviews } : b
+    );
+
+    fetch(`http://localhost:3000/books/${bookId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ reviews: updatedReviews }),
+    })
+      .then((res) => res.json())
+      .then(() => setBooks(updatedBooks));
+  };
+
 
 
 
