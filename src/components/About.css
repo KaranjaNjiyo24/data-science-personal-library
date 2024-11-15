@@ -3,3 +3,14 @@
     max-width: 42rem;
     margin: 0 auto;
   }
+  
+  .about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .about-text {
+    color: #4a5568;
+    line-height: 1.6;
+  }
