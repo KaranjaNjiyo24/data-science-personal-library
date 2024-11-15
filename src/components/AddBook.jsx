@@ -45,9 +45,20 @@ const AddBook = ({ onAddBook }) => {
             reviews: []
           });
           setImagePreview(null);
-          navigate("/"); // Navigate to home after adding book
+          navigate("/"); 
         });
     };
+    
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            setImagePreview(reader.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      };
 }
 
 export default AddBook;
