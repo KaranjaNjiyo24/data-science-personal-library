@@ -1,0 +1,77 @@
+/* BookList.css */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .book-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .book-card {
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .book-info {
+    padding: 1rem;
+    background-color: #000; 
+    color: #FFD700; 
+  }
+  
+  .book-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #FFD700; 
+  }
+  
+  .book-author {
+    color: #000; 
+    margin-bottom: 0.25rem;
+  }
+  
+  .book-year {
+    color: #000; 
+  }
+  
+  .book-status .status-badge {
+    display: inline-block;
+    background-color: #FFD700; 
+    color: #000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .book-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .book-cover {
+      height: 150px;
+    }
+  }
+  
