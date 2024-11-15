@@ -10,3 +10,18 @@
   background-color: #fff;
   color: #333;
 }
+
+/* Update Navbar theme */
+.navbar {
+  background-color: #000000; /* Black */
+  padding: 1rem;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #FFD700; /* Gold */
+}
+
+.nav-link:hover {
+  color: #ffdd00; /* Light gold */
+}
