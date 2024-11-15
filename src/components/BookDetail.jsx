@@ -15,6 +15,27 @@ const BookDetail = ({ books, onUpdateStatus, onAddReview, onEditReview, onDelete
         const newStatus = e.target.value;
         onUpdateStatus(book.id, newStatus);
       };
+
+    const handleAddReviewSubmit = (e) => {
+        e.preventDefault();
+        onAddReview(book.id, newReview);
+        setNewReview({ rating: 5, review: '', reviewer: '' });
+      };
+    
+    const handleEditReviewSubmit = (e) => {
+        e.preventDefault();
+        onEditReview(book.id, editingReviewIndex, editingReview);
+        setEditingReviewIndex(null);
+        setEditingReview({});
+      };
+    
+    const startEditingReview = (index, review) => {
+        setEditingReviewIndex(index);
+        setEditingReview(review);
+      };
+
+
+    
     
 }
 
