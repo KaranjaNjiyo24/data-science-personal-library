@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState }from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import BookList from './components/BookList';
 import BookDetail from './components/BookDetail';
 import AddBook from './components/AddBook';
 import About from './components/About';
+import Search from './components/Search';
 import './App.css'
 
 const App = () => {
   const [books, setBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/books')
       .then((res) => res.json())
-      .then((data) => setBooks(data));
+      .then((data) => {
+        setBooks(data)
+        setFilteredBooks(data)
+      });
   }, []);
 
   const handleAddBook = (newBook) => {
@@ -26,7 +31,8 @@ const App = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setBooks((prevBooks) => [...prevBooks, data]);
+        setBooks((prevBooks) => [...prevBooks, data])
+        setFilteredBooks((prevBooks) => [...prevBooks, data]);
       });  
   };
 
@@ -61,7 +67,9 @@ const App = () => {
       body: JSON.stringify({ reviews: updatedReviews }),
     })
       .then((res) => res.json())
-      .then(() => setBooks(updatedBooks));
+      .then(() => {setBooks(updatedBooks);
+      setFilteredBooks(updatedBooks)
+    })
   };
 
   
@@ -81,7 +89,10 @@ const App = () => {
       body: JSON.stringify({ reviews: updatedReviews }),
     })
       .then((res) => res.json())
-      .then(() => setBooks(updatedBooks));
+      .then(() => {
+        setBooks(updatedBooks)
+        setFilteredBooks(updatedBooks)
+      });
   };
 
   const handleDeleteReview = (bookId, reviewIndex) => {
@@ -99,16 +110,24 @@ const App = () => {
       body: JSON.stringify({ reviews: updatedReviews }),
     })
       .then((res) => res.json())
-      .then(() => setBooks(updatedBooks));
+      .then(() => {
+        setBooks(updatedBooks)
+        setFilteredBooks(updatedBooks)
+      });
   };
+
+  const handleSearchResults = (results) => {
+    setFilteredBooks(results)
+  }
 
   return (
     <Router>
       <div className="app">
         <NavBar />
         <main className="main-content">
+          <Search books={books} onSearchResults={handleSearchResults} /> 
           <Routes>
-            <Route path="/" element={<BookList books={books} />} />
+            <Route path="/" element={<BookList books={filteredBooks} />} />
             <Route
               path="/book/:id"
               element={
