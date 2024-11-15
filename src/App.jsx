@@ -14,17 +14,49 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
-  
+
+  const handleAddBook = (newBook) => {
+    fetch('http://localhost:3000/books', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newBook),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setBooks((prevBooks) => [...prevBooks, data]);
+      });  
+  };
+
+  const handleUpdateStatus = (bookId, newStatus) => {
+    const updatedBooks = books.map((book) =>
+      book.id === bookId ? { ...book, status: newStatus } : book
+    );
+
+    fetch(`http://localhost:3000/books/${bookId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status: newStatus }),
+    })
+      .then((res) => res.json())
+      .then(() => setBooks(updatedBooks));
+  };
+
+
+
   return (
     <Router>
-      <div>
+      <div className="app">
         <NavBar />
-        <Routes>
-          <Route path="/" element={<BookList />} />
-          <Route path="/book/:id" element={<BookDetail />} />
-          <Route path="/add" element={<AddBook />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+        <main className="main-content">
+          <Routes>
+            <Route path="/add" element={<AddBook onAddBook={handleAddBook} />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
