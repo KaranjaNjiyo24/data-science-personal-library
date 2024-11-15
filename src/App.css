@@ -1,0 +1,12 @@
+.app {
+  min-height: 100vh;
+  background-color: #ffffff; /* White background */
+  color: #333; /* Default text color */
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #333;
+}
