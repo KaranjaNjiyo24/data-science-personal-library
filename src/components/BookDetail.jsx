@@ -10,6 +10,12 @@ const BookDetail = ({ books, onUpdateStatus, onAddReview, onEditReview, onDelete
     const [editingReview, setEditingReview] = useState({});
   
     if (!book) return <div className="not-found">Book not found</div>;
+
+    const handleStatusChange = (e) => {
+        const newStatus = e.target.value;
+        onUpdateStatus(book.id, newStatus);
+      };
+    
 }
 
 
