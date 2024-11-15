@@ -1,0 +1,106 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "title": "R for Data Science",
+        "author": "Hadley Wickham & Garrett Grolemund",
+        "publicationYear": 2017,
+        "genre": "Programming",
+        "ISBN": "978-1492040590",
+        "coverImage": "https://d33wubrfki0l68.cloudfront.net/b88ef926a004b0fce72b2526b0b5c4413666a4cb/24a30/cover.png",
+        "status": "Reading",
+        "reviews": [
+          {
+            "rating": 5,
+            "review": "An excellent introduction to data science using R.",
+            "reviewer": "Alice Johnson"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Advanced R",
+        "author": "Hadley Wickham",
+        "publicationYear": 2015,
+        "genre": "Programming",
+        "ISBN": "978-1491970599",
+        "coverImage": "https://d33wubrfki0l68.cloudfront.net/565916198b0be51bf88b36f94b80c7ea67cafe7c/7f70b/cover.png",
+        "status": "Completed",
+        "reviews": [
+          {
+            "rating": 4,
+            "review": "Deep dive into R programming concepts.",
+            "reviewer": "Bob Smith"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "SQL in 10 Minutes, Sams Teach Yourself",
+        "author": "Ben Forta",
+        "publicationYear": 2012,
+        "genre": "Programming",
+        "ISBN": "978-0672336077",
+        "coverImage": "https://books.google.co.ke/books/content?id=IkBxyCMqwI8C&pg=PR1&img=1&zoom=3&hl=en&sig=ACfU3U07TPX-0y-qUUpYKYMGmJjzGlfAIQ&w=1280",
+        "status": "Reading",
+        "reviews": [
+          {
+            "rating": 4,
+            "review": "Great for quick learning of SQL basics.",
+            "reviewer": "Charlie Brown"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Learning SQL",
+        "author": "Alan Beaulieu",
+        "publicationYear": 2009,
+        "genre": "Programming",
+        "ISBN": "978-0596806025",
+        "coverImage": "https://learning.oreilly.com/library/cover/9781492057604/250w/",
+        "status": "Reading",
+        "reviews": [
+          {
+            "rating": 5,
+            "review": "'A comprehensive guide for beginners.",
+            "reviewer": "Diana Prince"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Automate the Boring Stuff with Python",
+        "author": "Al Sweigart",
+        "publicationYear": 2019,
+        "genre": "Programming",
+        "ISBN": "978-1593279929",
+        "coverImage": "https://automatetheboringstuff.com/images/cover_automate2_thumb.jpg",
+        "status": "Reading",
+        "reviews": [
+          {
+            "rating": 5,
+            "review": "A must-read for beginners to automate tasks with Python.",
+            "reviewer": "Ethan Hunt"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Python Crash Course",
+        "author": "Eric Matthes",
+        "publicationYear": 2019,
+        "genre": "Programming",
+        "ISBN": "978-1593279288",
+        "coverImage": "https://nostarch.com/sites/default/files/styles/uc_product/public/PythonCrashCourse3e_front%20%281%29.png?itok=4lzAk_AK",
+        "status": "Reading",
+        "reviews": [
+          {
+            "rating": 4,
+            "review": "An excellent introduction to Python programming.",
+            "reviewer": "Fiona Gallagher"
+          }
+        ]
+      }
+    ]
+  }
